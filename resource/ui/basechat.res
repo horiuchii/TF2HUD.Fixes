@@ -8,7 +8,7 @@
 		"enabled" 		"1"
 		"xpos"			"10"	[$WIN32]
 		"xpos"			"42"	[$X360]
-		"ypos"			"275"
+		"ypos"			"r130"
 		"ypos_hidef"	"245"
 		"wide"	 		"280"
 		"tall"	 		"120"
