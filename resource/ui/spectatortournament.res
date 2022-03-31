@@ -14,46 +14,62 @@
 		"team1_player_base_y"			"35"
 		"team1_player_delta_x"			"0"
 		"team1_player_delta_y"			"33"
-		"team2_player_base_offset_x"	"-368"
-		"team2_player_base_y"			"35"
+		
+		"team2_player_base_offset_x"	"0"
+		"team2_player_base_y"			"260"
 		"team2_player_delta_x"			"0"
 		"team2_player_delta_y"			"33"
 
 		"playerpanels_kv"
 		{
 			"visible"		"0"
-			"wide"			"60"
+			"wide"			"200"
 			"tall"			"33"
 			"zpos"			"1"
 
 			"color_ready"	"0 255 0 220"
 			"color_notready"	"0 0 0 220"
+			"paintborder" 		"0"
+			"paintbackground"	"0"
 
 			"playername"
 			{
 				"ControlName"	"CExLabel"
 				"fieldName"		"playername"
-				"font"			"DefaultVerySmall"
-				"xpos"			"5"
-				"ypos"			"24"
+				"font"			"HudFontSmall"
+				"xpos"			"30"
+				"ypos"			"0"
 				"zpos"			"5"
-				"wide"			"35"
-				"tall"			"8"
+				"wide"			"70"
+				"tall"			"24"
 				"autoResize"	"0"
 				"pinCorner"		"0"
 				"visible"		"1"
 				"labelText"		"%playername%"
-				"textAlignment"	"north-west"
+				"textAlignment"	"west"
 				//"fgcolor"		"235 226 202 255"
+			}
 
-				if_mvm
-				{
-					"xpos"				"0"
-					"ypos"				"25"
-					"wide"				"55"
-					"textAlignment"		"center"
-					"font"				"PlayerPanelPlayerName"
-				}
+			"playernameshadow"
+			{
+				"ControlName"	"CExLabel"
+				"fieldName"		"playernameshadow"
+				"font"			  "HudFontSmall"
+				"xpos"			  "0"
+				"ypos"			  "-2"
+				"zpos"			  "5"
+				"wide"			  "70"
+				"tall"			  "24"
+				"autoResize"	"0"
+				"pinCorner"		"0"
+				"visible"		  "1"
+				"labelText"		"%playername%"
+				"textAlignment"	"west"
+				"fgcolor"		  "Black"
+
+				"pin_to_sibling"	"playername"
+				"pin_corner_to_sibling"	"PIN_TOPLEFT"
+				"pin_to_sibling_corner"	"PIN_TOPLEFT"
 			}
 
 			"classimage"
@@ -69,15 +85,6 @@
 				"enabled"		"1"
 				"image"			"../hud/class_scoutred"
 				"scaleImage"	"1"
-
-				if_mvm
-				{
-					"xpos"			"5"
-					"ypos"			"4"
-					"wide"			"20"
-					"tall"			"20"
-					"image"			"../vgui/hud_connecting"
-				}
 			}
 
 			"classimagebg"
@@ -93,22 +100,48 @@
 				"enabled"		"1"
 				"bgcolor_override"		"Black"
 				"PaintBackgroundType"	"0"
-
-				if_mvm
-				{
-					"visible"		"1"
-				}
+			}
+			
+			"LoadoutIconsActiveItemRed"
+			{
+				"ControlName"		"ImagePanel"
+				"fieldName"			"LoadoutIconsActiveItemRed"
+				"xpos"				"145"
+				"ypos"				"5"
+				"zpos"				"200"
+				"wide"				"47"
+				"tall"				"22"
+				"visible"			"1"
+				"enabled"			"1"
+				"scaleImage"		"1"
+				"proportionalToParent" "1"
+				//fillcolor_override "255 0 0 32"
+			}
+			"LoadoutIconsActiveItemBlue"
+			{
+				"ControlName"		"ImagePanel"
+				"fieldName"			"LoadoutIconsActiveItemBlue"
+				"xpos"				"145"
+				"ypos"				"5"
+				"zpos"				"200"
+				"wide"				"47"
+				"tall"				"22"
+				"visible"			"1"
+				"enabled"			"1"
+				"scaleImage"		"1"
+				"proportionalToParent" "1"
+				//fillcolor_override "255 0 0 32"
 			}
 
 			"HealthIcon"
 			{
 				"ControlName"		"EditablePanel"
 				"fieldName"			"HealthIcon"
-				"xpos"				"20"
-				"ypos"				"-3"
+				"xpos"				"100"
+				"ypos"				"-5"
 				"zpos"				"3"
 				"wide"				"42"
-				"tall"				"32"
+				"tall"				"33"
 				"visible"			"1"
 				"enabled"			"1"
 				"HealthBonusPosAdj"	"10"
@@ -116,6 +149,63 @@
 				"TFFont"					"HudFontSmallest"
 				"HealthDeathWarningColor"	"HUDDeathWarning"
 				"TextColor"					"HudOffWhite"
+			}
+			
+			"PlayerHealthRed"
+			{
+				"ControlName"		"ContinuousProgressBar"
+				"fieldName"			"PlayerHealthRed"
+				"xpos"				"0"
+				"ypos"				"0"
+				"zpos"				"-2"
+				"wide"				"140"
+				"tall"				"24"
+				"progress"			"1"
+				"direction"			"west"
+				"bgcolor_override"	"89 24 23 255"
+				"fgcolor_override"	"157 49 47 255"
+			}
+			"PlayerHealthOverhealRed"
+			{
+				"ControlName"		"ContinuousProgressBar"
+				"fieldName"			"PlayerHealthOverhealRed"
+				"xpos"				"0"
+				"ypos"				"0"
+				"zpos"				"-2"
+				"wide"				"140"
+				"tall"				"24"
+				"progress"			"1"
+				"direction"			"west"
+				"bgcolor_override"	"0 0 0 0"
+				"fgcolor_override"	"209 73 71 255"
+			}
+			"PlayerHealthBlue"
+			{
+				"ControlName"		"ContinuousProgressBar"
+				"fieldName"			"PlayerHealthBlue"
+				"xpos"				"0"
+				"ypos"				"0"
+				"zpos"				"-2"
+				"wide"				"140"
+				"tall"				"24"
+				"progress"			"1"
+				"direction"			"east"
+				"bgcolor_override"	"38 55 63 255"
+				"fgcolor_override"	"57 92 120 255"
+			}
+			"PlayerHealthOverhealBlue"
+			{
+				"ControlName"		"ContinuousProgressBar"
+				"fieldName"			"PlayerHealthOverhealBlue"
+				"xpos"				"0"
+				"ypos"				"0"
+				"zpos"				"-2"
+				"wide"				"140"
+				"tall"				"24"
+				"progress"			"1"
+				"direction"			"east"
+				"bgcolor_override"	"0 0 0 0"
+				"fgcolor_override"	"87 145 191 255"
 			}
 
 			"ReadyBG"
@@ -138,11 +228,6 @@
 
 				"draw_corner_width"	"3"				// screen size of the corners ( and sides ), proportional
 				"draw_corner_height" 	"3"
-
-				if_mvm
-				{
-					"visible"		"1"
-				}
 			}
 
 			"ReadyImage"
@@ -160,18 +245,13 @@
 				"enabled"		"1"
 				"image"			"hud/checkmark"
 				"scaleImage"		"1"
-
-				if_mvm
-				{
-					"visible"		"1"
-				}
 			}
 
 			"respawntime"
 			{
 				"ControlName"	"CExLabel"
 				"fieldName"		"respawntime"
-				"font"			"DefaultSmall"
+				"font"			"HudFontSmallestBold"
 				"xpos"			"8"
 				"ypos"			"8"
 				"zpos"			"5"
@@ -183,11 +263,6 @@
 				"labelText"		"%respawntime%"
 				"textAlignment"	"west"
 				//"fgcolor"		"235 226 202 255"
-
-				if_mvm
-				{
-					"ypos"			"17"
-				}
 			}
 
 			"chargeamount"
@@ -195,10 +270,10 @@
 				"ControlName"	"CExLabel"
 				"fieldName"		"chargeamount"
 				"font"			"DefaultSmall"
-				"xpos"			"33"
-				"ypos"			"20"
+				"xpos"			"0"
+				"ypos"			"13"
 				"zpos"			"6"
-				"wide"			"25"
+				"wide"			"20"
 				"tall"			"15"
 				"autoResize"	"0"
 				"pinCorner"		"0"
@@ -225,22 +300,96 @@
 				"textAlignment"	"north-west"
 				//"fgcolor"		"235 226 202 255"
 			}
-
-			if_mvm
+			
+			"StatusEffectIconRed"
 			{
-				"wide"		"55"
-				"tall"		"35"
+				"ControlName"			"ImagePanel"
+				"fieldName"				"StatusEffectIconRed"
+				"xpos"					"110"
+				"ypos"					"2"
+				"zpos"					"1"
+				"wide"					"22"
+				"tall"					"22"
+				"visible"				"0"
+				"enabled"				"1"
+				"scaleImage"			"1"
+				"proportionalToParent"	"1"
+				"image"					""
 			}
-		}
+			
+			"StatusEffectIconBlue"
+			{
+				"ControlName"			"ImagePanel"
+				"fieldName"				"StatusEffectIconBlue"
+				"xpos"					"110"
+				"ypos"					"2"
+				"zpos"					"1"
+				"wide"					"22"
+				"tall"					"22"
+				"visible"				"0"
+				"enabled"				"1"
+				"scaleImage"			"1"
+				"proportionalToParent" 	"1"
+				"image"					""
+			}
+			
+			"WeaponChargeRed"
+			{
+				"ControlName"		"ContinuousProgressBar"
+				"fieldName"			"WeaponChargeRed"
+				"font"				"Default"
+				"xpos"				"0"
+				"ypos"				"24"
+				"zpos" 				"-2"
+				"wide"				"140"
+				"tall"				"4"
+				"autoResize"		"0"
+				"pinCorner"			"0"
+				"visible"			"1"
+				"enabled"			"1"
+				"textAlignment"		"Left"
+				"dulltext"			"0"
+				"brighttext"		"0"
+				"variable" 			"weaponchargeamount"
+				"direction" 		"west"
+				"fgcolor" 			"0 0 0 0"
+				"bgcolor" 			"255 255 255 255"
+			}
+			"WeaponChargeBlue"
+			{
+				"ControlName"		"ContinuousProgressBar"
+				"fieldName"			"WeaponChargeBlue"
+				"font"				"Default"
+				"xpos"				"0"
+				"ypos"				"24"
+				"zpos" 				"-2"
+				"wide"				"140"
+				"tall"				"4"
+				"autoResize"		"0"
+				"pinCorner"			"0"
+				"visible"			"1"
+				"enabled"			"1"
+				"textAlignment"		"Left"
+				"dulltext"			"0"
+				"brighttext"		"0"
+				"variable" 			"weaponchargeamount"
+				"direction" 		"east"
+				"fgcolor" 			"0 0 0 255"
+				"bgcolor" 			"255 255 255 255"
+			}
 
-		if_mvm
-		{
-			"xpos"					"c-250"
-			"ypos"					"6"
-			"wide"					"500"
-			"tall"					"180"
-
-			"team1_player_delta_x"			"52"
+			"PanelBottom"
+			{
+				"ControlName"		"ImagePanel"
+				"fieldName"			"PanelBottom"
+				"xpos"				"0"
+				"ypos"				"0"
+				"zpos"				"-5"
+				"wide"				"140"
+				"tall"				"28"
+				"fillcolor"			"0 0 0 220"
+				"proportionaltoparent"	"1"
+			}
 		}
 	}
 
@@ -249,7 +398,7 @@
 		"ControlName"	"Panel"
 		"fieldName"		"TopBar"
 		"visible"		"0"
-		"tall"			"33"
+		"tall"			"0"
 	}
 	"BottomBar"
 	{
@@ -281,14 +430,6 @@
 		"labelText"		"#game_respawntime_in_secs"
 		"textAlignment"		"center"
 		"font"			"HudFontSmall"
-
-		if_mvm
-		{
-			"xpos"			"c-190"
-			"ypos"			"1"
-			"wide"			"380"
-			"textAlignment"		"center"
-		}
 	}
 	"BuyBackLabel"
 	{
@@ -307,11 +448,6 @@
 		"font"			"HudFontSmall"
 		"wrap"			"1"
 		"centerwrap"	"1"
-
-		if_mvm
-		{
-			"visible"		"1"
-		}
 	}
 	"MapLabel"
 	{
@@ -330,7 +466,6 @@
 		"ControlName"		"CExLabel"
 		"fieldName"		"SwitchCamModeKeyLabel"
 		"visible"		"0"
-
 	}
 	"SwitchCamModeLabel"
 	{
