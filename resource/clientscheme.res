@@ -1011,6 +1011,17 @@ Scheme
 				"antialias" 	"1"
 			}
 		}
+		"HudFontSmallestSentryGunDisp"
+		{
+			"1"
+			{
+				"name"		"TF2 Secondary"
+				"tall"		"8"
+				"weight"	"500"
+				"additive"	"0"
+				"antialias" 	"1"
+			}
+		}
 		"HudFontSmallestShadow"
 		{
 			"1"
