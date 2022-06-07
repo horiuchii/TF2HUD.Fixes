@@ -23,6 +23,7 @@
 		"wide"			"f0"
 		"tall"			"60"
 		"visible"		"1"
+		"visible_minmode"	"0"
 		"enabled"		"1"
 		"bgcolor_override"		"0 0 0 200"
 		"PaintBackgroundType"	"0"
