@@ -2,13 +2,8 @@
 
 "resource/ui/huditemeffectmeter_engineer.res"
 {
-	"ItemEffectMeterLabel"
+	HudItemEffectMeter
 	{
-		"xpos_minmode"			"4"
-	}
-	
-	"ItemEffectMeterCount"
-	{
-		"xpos_minmode"			"4"
+		"x_offset_minmode"		"20"
 	}
 }
