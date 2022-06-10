@@ -213,7 +213,7 @@
 		"xpos"				"cs-0.5"
 		"ypos"				"-5"
 		"zpos"				"0"
-		"wide"				"500"
+		"wide"				"365"
 		"tall"				"28"
 		"visible"			"0"
 
@@ -222,7 +222,7 @@
 
 		if_match
 		{
-			"visible"		"1"
+			"visible"		"0"
 		}
 	}
 

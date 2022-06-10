@@ -14,16 +14,29 @@
 	"specgui"
 	{
 	}
+	"HeaderBG"
+	{
+		"ControlName"	"EditablePanel"
+		"fieldName"		"HeaderBG"
+		"xpos"			"0"
+		"ypos"			"r60"
+		"wide"			"f0"
+		"tall"			"60"
+		"visible"		"1"
+		"visible_minmode"	"0"
+		"enabled"		"1"
+		"bgcolor_override"		"0 0 0 200"
+		"PaintBackgroundType"	"0"
+	}
 	"topbar"
 	{
-		"ControlName"	"Panel"
+		"ControlName"		"Panel"
 		"fieldName"		"TopBar"
 		"xpos"			"0"
 		"ypos"			"0"
-		"tall"			"74"	[$WIN32]
-		"tall_minmode"			"20"	[$WIN32]
+		"tall"			"0"	[$WIN32]
 		"tall"			"104"	[$X360]		
-		"wide"			"f0"
+		"wide"			"0"	// change to f0 to enable
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"
@@ -35,33 +48,34 @@
 		"ControlName"	"Frame"
 		"fieldName"		"BottomBar"
 		"xpos"			"0"
-		"ypos"			"r60"	[$WIN32]
+		"ypos"			"r70"	[$WIN32]
 		"ypos"			"r90"	[$X360]		
 		"ypos_minmode"	"r20"
 		"tall"			"70"	[$WIN32]
 		"tall_minmode"	"0"		
 		"tall"			"90"	[$X360]		
+		"wide"			"0"	// change to f0 to enable
 		"autoResize"	"0"
 		"pinCorner"		"0"
-		"visible"		"0"
+		"visible"		"1"
 		"enabled"		"0"
 		"tabPosition"		"0"
 	}
 	"bottombarblank"
 	{
-		"ControlName"	"Panel"
+		"ControlName"		"Panel"
 		"fieldName"		"bottombarblank"
 		"xpos"			"0"
-		"ypos"			"r60"	[$WIN32]
+		"ypos"			"r0"	[$WIN32]
 		"ypos"			"r90"	[$X360]		
 		"ypos_minmode"	"r0"
 		"tall"			"70"	[$WIN32]		// this needs to match the size of BottomBar
 		"tall_minmode"	"0"		
 		"tall"			"90"	[$X360]		
-		"wide"			"f0"
+		"wide"			"0"	// change to f0 to enable
 		"autoResize"	"0"
 		"pinCorner"		"0"
-		"visible"		"0"
+		"visible"		"1"
 		"visible_minmode"		"0"
 		"enabled"		"1"
 		"tabPosition"		"0"
@@ -73,11 +87,12 @@
 		"xpos"			"c-300"	[$WIN32]
 		"xpos_minmode"	"0"
 		"xpos"			"c-200"	[$X360]
-		"ypos"			"35"	[$WIN32]
-		"ypos_minmode"	"2"		[$WIN32]
+		"ypos"			"50"	[$WIN32]
+		"ypos_minmode"	"3"		[$WIN32]
 		"ypos"			"67"	[$X360]
 		"ypos_hidef"	"79"
 		"ypos_lodef"	"85"
+		"zpos"			"2"
 		"wide"			"600"	[$WIN32]
 		"wide_minmode"	"300"
 		"wide"			"400"	[$X360]
@@ -101,6 +116,7 @@
 		"fieldName"		"BuyBackLabel"
 		"xpos"			"0"
 		"ypos"			"0"
+		"zpos"			"2"
 		"wide"			"400"
 		"tall"			"f0"
 		"autoResize"		"0"
@@ -119,10 +135,11 @@
 		"fieldName"		"MapLabel"
 		"font"			"HudFontSmall"
 		"font_hidef"		"HudFontMedium"
-		"xpos"			"r260"	[$WIN32]
-		"ypos"			"16"	[$WIN32]
-		"xpos"			"r285"	[$X360]
+		"xpos"			"15"	[$WIN32]
+		"ypos"			"r44"	[$WIN32]
+		"xpos"			"30"	[$X360]
 		"ypos"			"32"	[$X360]
+		"zpos"			"2"
 		"wide"			"240"	[$WIN32]
 		"wide"			"220"	[$X360]
 		"tall"			"20"
@@ -133,24 +150,24 @@
 		"visible_minmode"		"0"
 		"enabled"		"1"
 		"labelText"		"map: cp_bridge"
-		"textAlignment"		"east"
+		"textAlignment"		"west"
 	}
 	"ClassOrTeamLabel"
 	{
 		"ControlName"		"CExLabel"
 		"fieldName"		"ClassOrTeamLabel"
-		"xpos"			"c-85"
-		"xpos_hidef"	"c-65"
+		"xpos"			"15"
+		"xpos_hidef"	"60"
 		"xpos_lodef"	"40"
-		"ypos"			"55"
+		"ypos"			"r25"
 		"ypos_hidef"	"90"
 		"ypos_lodef"	"30"	
+		"zpos"			"2"
 		"wide"			"170"
 		"wide_hidef"	"130"
 		"wide_lodef"	"220"
 		"tall"			"15"
 		"tall_lodef"	"25"
-		"zpos"			"2"
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"	[$WIN32]
@@ -158,7 +175,7 @@
 		"visible"		"0"	[$X360]
 		"enabled"		"1"
 		"labelText"		"#TF_Spectator_ChangeTeam"
-		"textAlignment"		"center"
+		"textAlignment"		"west"
 		"textAlignment_lodef"		"north-west"
 		"font"			"HudFontSmall"
 		"font_hidef"	"HudFontSmallest"
@@ -173,9 +190,10 @@
 		"ypos"			"10"	[$WIN32]
 		"xpos"			"53"	[$X360]
 		"ypos"			"40"	[$X360]
+		"zpos"			"2"
 		"wide"			"60"	[$WIN32]
 		"wide"			"60"	[$X360]
-		"tall"			"20"
+		"tall"			"0"	//20
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"	[$WIN32]
@@ -195,9 +213,10 @@
 		"ypos"			"10"	[$WIN32]
 		"xpos"			"128"	[$X360]
 		"ypos"			"40"	[$X360]		
+		"zpos"			"2"
 		"wide"			"125"	[$WIN32]
 		"wide"			"95"	[$X360]		
-		"tall"			"20"
+		"tall"			"0"	//20
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"	[$WIN32]
@@ -216,9 +235,10 @@
 		"ypos"			"20"	[$WIN32]
 		"xpos"			"53"	[$X360]
 		"ypos"			"50"	[$X360]		
+		"zpos"			"2"
 		"wide"			"60"	[$WIN32]
 		"wide"			"60"	[$X360]
-		"tall"			"20"
+		"tall"			"0"	//20
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"	[$WIN32]
@@ -237,9 +257,10 @@
 		"ypos"			"20"	[$WIN32]
 		"xpos"			"128"	[$X360]
 		"ypos"			"50"	[$X360]		
+		"zpos"			"2"
 		"wide"			"125"	[$WIN32]
 		"wide"			"95"	[$X360]	
-		"tall"			"20"
+		"tall"			"0"	//20
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"	[$WIN32]
@@ -258,9 +279,10 @@
 		"ypos"			"30"	[$WIN32]
 		"xpos"			"53"	[$X360]
 		"ypos"			"60"	[$X360]		
+		"zpos"			"2"
 		"wide"			"60"	[$WIN32]
 		"wide"			"60"	[$X360]		
-		"tall"			"20"
+		"tall"			"0"	//20
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"	[$WIN32]
@@ -279,12 +301,13 @@
 		"ypos"			"30"	[$WIN32]
 		"xpos"			"128"	[$X360]
 		"ypos"			"60"	[$X360]		
+		"zpos"			"2"
 		"wide"			"125"	[$WIN32]
 		"wide"			"95"	[$X360]
-		"tall"			"20"
+		"tall"			"0"	//20
 		"autoResize"		"0"
 		"pinCorner"		"0"
-		"visible"		"1"	[$WIN32]
+		"visible"		"0"	[$WIN32]
 		"visible_minmode"		"0"
 		"visible"		"0"	[$X360]
 		"enabled"		"1"
@@ -299,20 +322,21 @@
 		"xpos"			"15"
 		"xpos_hidef"	"60"
 		"xpos_lodef"	"45"
-		"ypos"			"r55"
+		"ypos"			"r60"
+		"zpos"			"2"
 		"ypos_lodef"		"28"
 		"ypos_hidef"		"35"
-		"wide"			"325"
-		"wide_hidef"	"305"
-		"wide_lodef"	"315"
-		"tall"			"50"
+		"wide"			"300"
+		"wide_hidef"	"230"
+		"wide_lodef"	"240"
+		"tall"			"64"
 		"tall_hidef"	"70"
 		"tall_lodef"	"70"
 		"autoResize"		"0"
 		"pinCorner"		"0"
-		"visible"		"1"
+		"visible"		"0"
 		"visible_minmode"		"0"
-		"enabled"		"1"
+		"enabled"		"0"
 		"labelText"		"%tip%"
 		"textAlignment"		"center"	[$WIN32]
 		"textAlignment"		"north-west"	[$X360]
